@@ -1,0 +1,14 @@
+MVC Architecture
+
+Model/Sevice:-(used to write business logics)
+View:-used for user interface by html template
+Controller:- Request handling/Request process then give Response
+
+Project architecture:- MVC
+Technology:- Spring,Hibernate(it writes sql query automatically),JDK 21
+front end:-Thymeleaf(To create dynamic webpages),JSP
+
+Instead of DAO layer ,we use JPA repository which gives us methods to perform database operations(save,findAll)
+
+
+@Controller:- To handle the request which is coming from the server but doesn't handle RestAPI for handling RestAPI we have RestController

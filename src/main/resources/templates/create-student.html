@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="ISO-8859-1">
+    <title>Welcome to My Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+      body {
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://cdn.pixabay.com/photo/2016/02/17/15/37/laptop-1205256_1280.jpg');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+      }
+
+   .container {
+          text-align: center;
+          background-color: rgba(255, 255, 255, 0.7);
+          position: relative;
+          top: 70%;
+          transform: translateY(50%); /* Vertically center the container */
+          max-width: 550px;
+          padding: 40px;
+          border-radius: 10px;
+   }
+
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+      <!-- Brand  -->
+      <a class="navbar-brand" href="#">Attendance Management System</a>
+
+      <!-- Toggler/collapsible Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" th:href="@{/students}">Attendance Management System</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <h1 class="text-center"> Student Registration Form</h1>
+
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+        <u><div class="text-center" style="font-size:30px;">Create New Student </div></u>
+        <div class="card-body"></div>
+
+        <form th:action="@{/students}" th:object="${student}" method="post">
+
+          <div class="form-group">
+            <label for="firstName">Student First Name</label>
+            <input type="text" name="firstName" id="firstName" placeholder="Enter first Name" />
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Student Last Name</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Enter last Name" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Student Email</label>
+            <input type="text" name="email" id="email" placeholder="Enter Email" />
+          </div>
+
+          <div class="box-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
